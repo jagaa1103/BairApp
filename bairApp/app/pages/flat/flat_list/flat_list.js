@@ -1,4 +1,5 @@
-import {Page, NavParams} from 'ionic/ionic';
+import {Page, NavController, NavParams} from 'ionic/ionic';
+import {FlatDetail} from '../flat_detail/flat_detail';
 import {DataService} from '../../../services/dataService';
 
 @Page({
@@ -7,10 +8,15 @@ import {DataService} from '../../../services/dataService';
 })
 
 export class FlatList{
-    constructor(params: NavParams, dataService: DataService){
+    constructor(nav: NavController, params: NavParams, dataService: DataService){
+        this.nav = nav;
         this.navParams = params;
         this.type = this.navParams.get('type');
         this.room = this.navParams.get('room');
-        dataService.getData(this.type, this.room);
+        this.flats = dataService.getData(this.type, this.room);
+    }
+
+    showDetail(flat){
+        this.nav.push(FlatDetail, {flat_info: flat});
     }
 }
