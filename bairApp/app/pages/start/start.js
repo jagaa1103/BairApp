@@ -7,5 +7,14 @@ import {Page} from 'ionic/ionic';
 export class StartPage{
     constructor(){
         console.log('StartPage');
-    }
+    };
+    goOronSuuts(){
+        console.log("goOronSuuts");
+    };
+    goHashaaBaishin(){
+        console.log("goHashaaBaishin");
+    };
+    goOffice(){
+        console.log("goOffice");
+    };
 }

@@ -1,16 +1,21 @@
+<style>
+    .start_icon{
+        height: 200px;
+    }
+</style>
 <ion-content class="startPage">
-    <ion-slides pager loop="true" autoplay="true">
-          <ion-slide style="background-color: green">
-            <h2>Zarah tureesleh</h2>
-          </ion-slide>
-
-          <ion-slide style="background-color: blue">
-            <h2>Hashaa, Bair, office</h2>
-          </ion-slide>
-
-          <ion-slide style="background-color: red">
-            <h2>Uruunii too, esvel bairlal</h2>
-          </ion-slide>
-
-    </ion-slides>
+    <div class="start_icon">
+        <img src="" alt="" />
+    </div>
+    <ion-row>
+        <button width-25 outline (click)="goOronSuuts()">
+            Орон Сууц
+        </button>
+        <button width-25 outline (click)="goHashaaBaishin()">
+            Хашаа байшин
+        </button>
+        <button width-25 outline (click)="goOffice()">
+            Оффис
+        </button>
+    </ion-row>
 </ion-content>
