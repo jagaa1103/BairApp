@@ -1,5 +1,5 @@
 import {Page, NavController} from 'ionic/ionic';
-import {BairType} from '../bair/bairtype';
+import {FlatType} from '../flat/flat_type/flat_type';
 
 @Page({
     templateUrl: 'build/pages/start/start.html'
@@ -7,18 +7,13 @@ import {BairType} from '../bair/bairtype';
 
 export class StartPage{
     constructor(nav: NavController){
-        console.log('StartPage');
         this.nav = nav;
     };
-    goOronSuuts(){
-        console.log("goOronSuuts");
-        console.log(this);
-        console.log(BairType);
-        console.log(this.nav);
-        this.nav.push(BairType);
+    goFlat(){
+        this.nav.push(FlatType);
     };
-    goHashaaBaishin(){
-        console.log("goHashaaBaishin");
+    goHouse(){
+        console.log("goHouse");
     };
     goOffice(){
         console.log("goOffice");

@@ -1,0 +1,28 @@
+<style media="screen">
+    .flat_type_icon_field{
+        height: 300px;
+    }
+    #flat_type_message{
+        margin: 20px;
+    }
+</style>
+<ion-content>
+    <div class="flat_type_icon_field">
+
+    </div>
+    <div id="flat_type_message">Байрны төрлөө сонгоно уу</div>
+        <div width="250px" align="center">
+            <ion-row>
+                <div width-50>
+                    <button outline (click)="selectedType('sell')">
+                        зарна
+                    </button>
+                </div>
+                <div width-50>
+                    <button outline (click)="selectedType('rent')">
+                        түрээслэнэ
+                    </button>
+                </div>
+            </ion-row>
+        </div>
+</ion-content>
