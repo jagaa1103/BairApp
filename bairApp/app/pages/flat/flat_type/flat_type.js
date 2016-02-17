@@ -2,7 +2,7 @@ import {Page, NavController} from 'ionic/ionic';
 import {FlatRoom} from '../flat_room/flat_room';
 
 @Page({
-    templateUrl: 'build/pages/flat/flat_type.html'
+    templateUrl: 'build/pages/flat/flat_type/flat_type.html'
 })
 
 export class FlatType{

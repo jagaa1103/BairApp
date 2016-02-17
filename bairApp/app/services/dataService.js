@@ -7,11 +7,30 @@ export class DataService{
         this.flats = [
             {
                 title: "Hello",
-                info: "Nice Flat"
+                info: "Nice Flat",
+                images: [
+                    "build/img/flat.jpg",
+                    "build/img/flat.jpg",
+                    "build/img/flat.jpg"
+                ]
             },
             {
                 title: "World",
-                info: "Good Flat"
+                info: "Good Flat",
+                images: [
+                    "build/img/flat2.jpg",
+                    "build/img/flat.jpg",
+                    "build/img/flat.jpg"
+                ]
+            },
+            {
+                title: "Soliotoi",
+                info: "Best Flat",
+                images: [
+                    "build/img/flat3.jpg",
+                    "build/img/flat.jpg",
+                    "build/img/flat.jpg"
+                ]
             }
         ];
     }

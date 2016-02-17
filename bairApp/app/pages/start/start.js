@@ -1,4 +1,4 @@
-import {Page, NavController} from 'ionic/ionic';
+import {Page, NavController, Modal} from 'ionic/ionic';
 import {FlatType} from '../flat/flat_type/flat_type';
 
 @Page({

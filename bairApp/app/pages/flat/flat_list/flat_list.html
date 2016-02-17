@@ -5,6 +5,7 @@
 
     <ion-card *ngFor="#flat of flats" (click)="showDetail(flat)">
 
+        <img src="{{flat.images[0]}}" />
         <ion-card-header>
             {{flat.title}}
         </ion-card-header>
