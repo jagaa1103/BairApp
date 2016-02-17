@@ -1,6 +1,6 @@
 import {App, Platform} from 'ionic/ionic';
 import {StartPage} from './pages/start/start';
-
+// import {BairType} from './pages/bair/bairtype';
 
 @App({
   template: '<ion-nav [root]="rootPage"></ion-nav>',
@@ -9,6 +9,8 @@ import {StartPage} from './pages/start/start';
 export class MyApp {
   constructor(platform: Platform) {
     this.rootPage = StartPage;
+    // this.rootPage = BairType;
+
 
     platform.ready().then(() => {
       // The platform is now ready. Note: if this callback fails to fire, follow
