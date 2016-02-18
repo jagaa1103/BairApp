@@ -9,4 +9,5 @@ export class FlatDetail{
         console.log(params.get('flat_info'));
         this.flat_info = params.get('flat_info');
     }
+
 }

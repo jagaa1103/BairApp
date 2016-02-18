@@ -9,15 +9,35 @@
     <div class="start_icon">
         <img src="build/img/start_icon.png" height="200px"/>
     </div>
-    <ion-row>
-        <button width-25 outline (click)="goFlat()">
-            Орон Сууц
-        </button>
-        <button width-25 outline (click)="goHouse()">
-            Хашаа байшин
-        </button>
-        <button width-25 outline (click)="goOffice()">
-            Оффис
-        </button>
-    </ion-row>
+    <!-- <ion-row align="center">
+        <ion-col width-50>
+            <button outline (click)="goFlat()">
+                Орон Сууц
+            </button>
+        </ion-col>
+        <ion-col width-50>
+            <button outline (click)="goHouse()">
+                Хашаа байшин
+            </button>
+        </ion-col>
+        <ion-col width-50>
+            <button outline (click)="goOffice()">
+                Оффис
+            </button>
+        </ion-col>
+    </ion-row> -->
+    <div padding>
+        <ion-segment>
+            <ion-segment-button value="kittens" (click)="goFlat()">
+                Орон Сууц
+            </ion-segment-button>
+            <ion-segment-button value="puppies" (click)="goHouse()">
+                Хашаа газар
+            </ion-segment-button>
+            <ion-segment-button value="djfa" (click)="goOffice()">
+                Оффис
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
 </ion-content>

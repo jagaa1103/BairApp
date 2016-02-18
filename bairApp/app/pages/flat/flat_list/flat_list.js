@@ -19,4 +19,21 @@ export class FlatList{
     showDetail(flat){
         this.nav.push(FlatDetail, {flat_info: flat});
     }
+
+    doRefresh(refresher) {
+      console.log('Doing Refresh', refresher)
+
+      setTimeout(() => {
+        refresher.complete();
+        console.log("Complete");
+      }, 5000);
+    }
+
+    doStart(refresher) {
+      console.log('Doing Start', refresher);
+    }
+
+    doPulling(refresher) {
+      console.log('Pulling', refresher);
+    }
 }
