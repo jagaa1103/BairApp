@@ -1,9 +1,12 @@
 import {Injectable} from 'angular2/core';
+import {Http} from 'angular2/http';
 
 @Injectable()
 export class DataService{
-    constructor(){
+    constructor(http: Http){
         console.log('DataService');
+        this.http = http;
+        this.base_url = 'http://www.base.com';
         this.flats = [
             {
                 title: "Hello",
@@ -50,5 +53,16 @@ export class DataService{
     getData(type, uruunii_too){
         console.log("DataService > type: " + type + ', room: '+ uruunii_too);
         return this.flats;
+    }
+
+    getDataFromServer(){
+            this.http.get(this.base_url + "params")
+            .subscribe(data => {
+                this.datas = JSON.parse(data._body);
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+            }, ()=> {
+                console.log(this.datas);
+            });
     }
 }

@@ -14,6 +14,8 @@ export class FlatList{
         this.type = this.navParams.get('type');
         this.room = this.navParams.get('room');
         this.flats = dataService.getData(this.type, this.room);
+
+        dataService.getDataFromServer();
     }
 
     showDetail(flat){
