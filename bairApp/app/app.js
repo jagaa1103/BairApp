@@ -1,6 +1,7 @@
 import {App, IonicApp, Platform, Modal, MenuController} from 'ionic/ionic';
 import {StartPage} from './pages/start/start';
 import {ProfilePage} from './pages/profile/profile';
+import {LoginPage} from './pages/profile/login/login';
 import {UserService} from './services/userService';
 // import {BairType} from './pages/bair/bairtype';
 
@@ -38,11 +39,11 @@ import {UserService} from './services/userService';
   providers: [UserService]
 })
 export class MyApp {
-    constructor(app: IonicApp, platform: Platform, menu: MenuController) {
+    constructor(app: IonicApp, platform: Platform, menu: MenuController, userService: UserService) {
         this.rootPage = StartPage;
+        this.userService = userService;
         this.menu = menu;
         this.app = app;
-        console.log(UserService);
         platform.ready().then(() => {
           // The platform is now ready. Note: if this callback fails to fire, follow
           // the Troubleshooting guide for a number of possible solutions:
@@ -62,20 +63,17 @@ export class MyApp {
     }
     showProfile() {
         this.menu.close();
-        UserService.checkLogin();
-        // if(UserService.checkLogin()){
-        //     // let nav = this.app.getComponent('nav');
-        //     // let modal = Modal.create(ProfilePage);
-        //     // nav.present(modal);
-        //     console.log('user logged in');
-        // }else{
-        //     // let nav = this.app.getComponent('nav');
-        //     // let modal = Modal.create(ProfilePage);
-        //     // nav.present(modal);
-        //     console.log('not user info');
-        // }
-        console.log('showModal');
-
+        if(this.userService.checkLogin()){
+            console.log('user logged in');
+            let nav = this.app.getComponent('nav');
+            let modal = Modal.create(ProfilePage);
+            nav.present(modal);
+        }else{
+            console.log('not user info');
+            let nav = this.app.getComponent('nav');
+            let modal = Modal.create(LoginPage);
+            nav.present(modal);
+        }
     }
 
     postItem() {
