@@ -1,6 +1,7 @@
 import {App, IonicApp, Platform, Modal, MenuController} from 'ionic/ionic';
 import {StartPage} from './pages/start/start';
 import {ProfilePage} from './pages/profile/profile';
+import {UserService} from './services/userService';
 // import {BairType} from './pages/bair/bairtype';
 
 @App({
@@ -33,13 +34,15 @@ import {ProfilePage} from './pages/profile/profile';
   </ion-menu>
 
   <ion-nav id="nav" #content [root]="rootPage"></ion-nav>`,
-  config: {}
+  config: {},
+  providers: [UserService]
 })
 export class MyApp {
     constructor(app: IonicApp, platform: Platform, menu: MenuController) {
         this.rootPage = StartPage;
         this.menu = menu;
         this.app = app;
+        console.log(UserService);
         platform.ready().then(() => {
           // The platform is now ready. Note: if this callback fails to fire, follow
           // the Troubleshooting guide for a number of possible solutions:
@@ -59,10 +62,20 @@ export class MyApp {
     }
     showProfile() {
         this.menu.close();
+        UserService.checkLogin();
+        // if(UserService.checkLogin()){
+        //     // let nav = this.app.getComponent('nav');
+        //     // let modal = Modal.create(ProfilePage);
+        //     // nav.present(modal);
+        //     console.log('user logged in');
+        // }else{
+        //     // let nav = this.app.getComponent('nav');
+        //     // let modal = Modal.create(ProfilePage);
+        //     // nav.present(modal);
+        //     console.log('not user info');
+        // }
         console.log('showModal');
-        let nav = this.app.getComponent('nav');
-        let modal = Modal.create(ProfilePage);
-        nav.present(modal);
+
     }
 
     postItem() {
