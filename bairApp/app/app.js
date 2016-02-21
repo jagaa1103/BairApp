@@ -2,6 +2,7 @@ import {App, IonicApp, Platform, Modal, MenuController} from 'ionic/ionic';
 import {StartPage} from './pages/start/start';
 import {ProfilePage} from './pages/profile/profile';
 import {LoginPage} from './pages/profile/login/login';
+import {PostItem} from './pages/post_item/post_item';
 import {UserService} from './services/userService';
 // import {BairType} from './pages/bair/bairtype';
 
@@ -45,20 +46,6 @@ export class MyApp {
         this.menu = menu;
         this.app = app;
         platform.ready().then(() => {
-          // The platform is now ready. Note: if this callback fails to fire, follow
-          // the Troubleshooting guide for a number of possible solutions:
-          //
-          // Okay, so the platform is ready and our plugins are available.
-          // Here you can do any higher level native things you might need.
-          //
-          // First, let's hide the keyboard accessory bar (only works natively) since
-          // that's a better default:
-          //
-          // Keyboard.setAccessoryBarVisible(false);
-          //
-          // For example, we might change the StatusBar color. This one below is
-          // good for dark backgrounds and light text:
-          // StatusBar.setStyle(StatusBar.LIGHT_CONTENT)
         });
     }
     showProfile() {
@@ -80,7 +67,7 @@ export class MyApp {
         this.menu.close();
         console.log('showModal');
         let nav = this.app.getComponent('nav');
-        let modal = Modal.create(ProfilePage);
+        let modal = Modal.create(PostItem);
         nav.present(modal);
     }
 }
