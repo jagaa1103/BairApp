@@ -1,0 +1,62 @@
+<style media="screen">
+    .item_text{
+        line-height: 1.5em;
+        height: 4em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .card_footer_item_first{
+        color: #387ef5;
+    }
+    .card_footer_item_second{
+        margin-left: 10px;
+        color: #387ef5;
+    }
+    .card_footer_item_third{
+        margin-left: 10px;
+        color: gray;
+    }
+</style>
+<ion-navbar *navbar>
+  <ion-title>{{type}}</ion-title>
+</ion-navbar>
+<ion-content>
+    <ion-refresher (start)="doStart($event)"
+                 (refresh)="doRefresh($event)"
+                 (pulling)="doPulling($event)">
+    </ion-refresher>
+
+    <ion-card *ngFor="#flat of flats" (click)="showDetail(flat)">
+
+        <img src="{{flat.images[0]}}" />
+
+        <ion-card-content>
+            <p class="item_text" >{{flat.info}}</p>
+        </ion-card-content>
+        <ion-item align="center">
+            <ion-row>
+                <span class="card_footer_item_first">
+                    Room: {{flat.room}}
+                </span>
+                <span class="card_footer_item_second">
+                    Price: {{flat.price}}
+                </span>
+                <span class="card_footer_item_third">
+                    {{flat.date}}
+                </span>
+            </ion-row>
+        </ion-item>
+    </ion-card>
+<!--
+    <ion-list>
+      <ion-item *ngFor="#flat of flats" (click)="showDetail(flat)">
+        <ion-thumbnail item-left>
+          <img src="{{flat.images[0]}}" height="100%">
+        </ion-thumbnail>
+        <h2>{{flat.title}}</h2>
+        <p>{{flat.info}}</p>
+      </ion-item>
+    </ion-list> -->
+
+</ion-content>

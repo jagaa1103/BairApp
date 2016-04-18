@@ -1,0 +1,43 @@
+<style>
+    .start_icon{
+        height: 300px;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+<ion-content class="startPage">
+    <div class="start_icon">
+        <img src="build/img/start_icon.png" height="200px"/>
+    </div>
+    <!-- <ion-row align="center">
+        <ion-col width-50>
+            <button outline (click)="goFlat()">
+                Орон Сууц
+            </button>
+        </ion-col>
+        <ion-col width-50>
+            <button outline (click)="goHouse()">
+                Хашаа байшин
+            </button>
+        </ion-col>
+        <ion-col width-50>
+            <button outline (click)="goOffice()">
+                Оффис
+            </button>
+        </ion-col>
+    </ion-row> -->
+    <div padding>
+        <ion-segment>
+            <ion-segment-button (click)="goFlat()">
+                Орон Сууц
+            </ion-segment-button>
+            <ion-segment-button (click)="goHouse()">
+                Хашаа газар
+            </ion-segment-button>
+            <ion-segment-button (click)="goOffice()">
+                Оффис
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+
+</ion-content>

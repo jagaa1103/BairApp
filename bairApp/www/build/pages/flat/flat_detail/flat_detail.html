@@ -1,0 +1,44 @@
+<style media="screen">
+    #image_slide{
+        width: 100%;
+    }
+    .list_item_info{
+        color: #387ef5;
+    }
+    #detail_footer{
+        text-align: center;
+    }
+</style>
+
+<ion-navbar *navbar>
+    <ion-title>{{flat_info.title}}</ion-title>
+</ion-navbar>
+
+<ion-content>
+    <div id="image_slide">
+        <ion-slides loop="true" autoplay="true">
+            <ion-slide *ngFor="#image of flat_info.images">
+                <img src="{{image}}" />
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <ion-item>Орон сууцны талаарх мэдээлэл</ion-item>
+    <ion-list>
+        <ion-item><span class="list_item_info">Өрөөний тоо: </span>{{flat_info.room}}</ion-item>
+        <ion-item><span class="list_item_info">Үнэ: </span>{{flat_info.price}}</ion-item>
+        <ion-item><span class="list_item_info">Давхар: </span>{{flat_info.price}}</ion-item>
+        <ion-item><span class="list_item_info">Граж: </span>{{flat_info.phone}}</ion-item>
+        <ion-item><span class="list_item_info">Ашиглалтанд огноо: </span>{{flat_info.date}}</ion-item>
+        <ion-item><span class="list_item_info">Хот: </span>{{flat_info.city}}</ion-item>
+        <ion-item><span class="list_item_info">Дүүрэг: </span>{{flat_info.district}}</ion-item>
+        <ion-item><span class="list_item_info">Хотхон: </span>{{flat_info.town}}</ion-item>
+        <ion-item><span class="list_item_info">Нэмэлт мэдээлэл: </span>{{flat_info.info}}</ion-item>
+    </ion-list>
+
+    <ion-item>Хэрвээ танд таалагдаж байгаа бол</ion-item>
+    <ion-row id="detail_footer">
+        <ion-col width-50><button outline><ion-icon name="ios-star"></ion-icon>Таалагдсан</button></ion-col>
+        <ion-col width-50><button outline><ion-icon name="ios-call"></ion-icon>{{flat_info.phone}}</button></ion-col>
+    </ion-row>
+</ion-content>

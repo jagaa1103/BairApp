@@ -1,0 +1,41 @@
+<style media="screen">
+    .flat_type_icon_field{
+        height: 300px;
+        text-align: center;
+    }
+    #flat_type_message{
+        text-align: center;
+        margin: 20px;
+    }
+</style>
+<ion-navbar *navbar clear>
+  <ion-title>{{type}}</ion-title>
+</ion-navbar>
+<ion-content>
+    <div class="flat_type_icon_field">
+
+    </div>
+    <div id="flat_type_message">Байрны төрлөө сонгоно уу</div>
+    <!-- <ion-row>
+        <ion-col width-50 align="center">
+            <button outline (click)="selectedType('sell')">
+                зарна
+            </button>
+        </ion-col>
+        <ion-col width-50 class="text-center">
+            <button outline (click)="selectedType('rent')">
+                түрээслэнэ
+            </button>
+        </ion-col>
+    </ion-row> -->
+    <div padding>
+        <ion-segment>
+            <ion-segment-button value="kittens" (click)="selectedType('rent')">
+                Зарах
+            </ion-segment-button>
+            <ion-segment-button value="puppies" (click)="selectedType('sell')">
+                Түрээслэх
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+</ion-content>

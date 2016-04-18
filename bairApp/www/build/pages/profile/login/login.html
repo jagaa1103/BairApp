@@ -1,0 +1,39 @@
+<ion-navbar *navbar>
+    <ion-title>Login</ion-title>
+    <ion-buttons end>
+        <button (click)="closeLogin()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+</ion-navbar>
+
+<ion-content>
+    <ion-list>
+        <ion-item [hidden]="!hideForgotPass()">
+            <ion-label primary stacked>Username</ion-label>
+            <ion-input type="text" [(ngModel)]="id"></ion-input>
+            {{user_info}}
+        </ion-item>
+
+        <ion-item [hidden]="!hideForgotPass()">
+            <ion-label primary stacked>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="pass"></ion-input>
+        </ion-item>
+
+        <ion-item [hidden]="hideForgotPass()">
+            <ion-label primary stacked>Insert email</ion-label>
+            <ion-input type="text" [(ngModel)]="email"></ion-input>
+        </ion-item>
+    </ion-list>
+    <div align="center">
+        <button outline (click)="login()">Login</button>
+    </div>
+    <div id="registerForgot">
+        <ion-row>
+            <ion-col width-50>
+                <button outline (click)="register()">Register</button>
+            </ion-col>
+            <ion-col width-50>
+                <button outline (click)="forgotPassWord()">Forgot Pass</button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
