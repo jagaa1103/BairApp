@@ -56,7 +56,7 @@ export class DataService{
     }
 
     getDataFromServer(){
-            this.http.get(this.base_url + "params")
+            this.http.get(this.base_url + "/" + "params")
             .subscribe(data => {
                 this.datas = JSON.parse(data._body);
             }, error => {
